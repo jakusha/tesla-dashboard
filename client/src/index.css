@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+* {
+	margin: 0;
+}
+:root {
+	/* --map-tiles-filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7); */
+	--map-tiles-filter: brightness(0.6) invert(1) contrast(5) hue-rotate(200deg) saturate(0.8) brightness(0.5);
+}
+
+/* Works on Firefox
+* {
+	scrollbar-width: thin;
+	scrollbar-color: blue;
+  }
+  
+  /* Works on Chrome, Edge, and Safari */
+  /* *::-webkit-scrollbar {
+	width: 4px;
+  }
+   
+  *::-webkit-scrollbar-thumb {
+	background-color: blue;
+	border-radius: 20px;
+	border: 3px solid;
+  }  */
+
+  ::-webkit-scrollbar {
+	width: 4px;
+	height: 15px;
+	
+  }
+  
+  ::-webkit-scrollbar-track-piece {
+	background-color: transparent;
+	
+  }
+  
+  ::-webkit-scrollbar-thumb:vertical {
+	height: 15px;
+	background-color: #a6a6a6;
+	border-radius: 16px;
+  }
+
+html,
+body {
+	height: 100%;
+}
+body {
+	line-height: 1.2;
+	-webkit-font-smoothing: antialiased;
+	font-family: 'Inter', sans-serif;
+	font-weight: 500;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+#root,
+#__next {
+	isolation: isolate;
+}
+
+.map-tiles {
+	filter: var(--map-tiles-filter);
+}
+
+button {
+	font-family: 'Inter', sans-serif;
+}
+/* @media (prefers-color-scheme:  dark) {
+
+} */
+
+/* --map-tiles-filter: brightness(0.6) invert(1) contrast(5) hue-rotate(200deg) saturate(0.8) brightness(0.5); */
