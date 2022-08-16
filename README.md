@@ -8,7 +8,7 @@ features:
 - and other cool stuff.
 
 
-- Live Preview: https://tesla-dashboard-five.vercel.app/
+- Live Site URL: [view site live](https://tesla-dashboard-five.vercel.app/)
 
 ![Screenshot 2022-08-16 at 21-09-13 Tesla Dashboard Simulator](https://user-images.githubusercontent.com/53101939/184975749-acd95e76-206f-44f0-8863-bef4619eb43e.png)
 
