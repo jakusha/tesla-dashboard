@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import {
 	MapContainer,
 	TileLayer,
@@ -340,7 +341,7 @@ const StyledDiv = styled.div`
 		display: inline-block;
 		width: 25px;
 		height: 25px;
-		background-image: url("./images/straight.svg");
+		background-image: url("../images/straight.svg");
 		background-size: 25px 25px;
 		background-position: center;
 	}
