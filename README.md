@@ -18,16 +18,17 @@ features:
 
 ### Built with
 
--   Javascript 
--   React
--   Styled Components
--   React Tabs
--   Radio browser api https://github.com/ivandotv/radio-browser-api
--   Leaflet
--   Leaflet Routing Machine
--   Express js
+-   [React](https://reactjs.org/)
+-   [Styled Components](https://styled-components.com/)
+-   [React Tabs](https://github.com/reactjs/react-tabs)
+-   [Radio browser api](https://github.com/ivandotv/radio-browser-api)
+-   [Leaflet](https://leafletjs.com/)
+-   [React Leaflet](https://react-leaflet.js.org/)
+-   [Leaflet Routing Machine](https://www.liedman.net/leaflet-routing-machine/#:~:text=Leaflet%20Routing%20Machine%20is%20an,the%20user%20interface%20and%20interactions.)
+-   [Express js](https://expressjs.com/)
 
 ## Special Thanks
-
--  this app wouldnt have been possible without this excellent designer 
+-  [Colby Fayock](https://github.com/colbyfayock/50-projects-for-react-and-the-static-web/tree/master/Clones#tesla-touchscreen)
+-  the excellent designer behind it [Andrew Goodlad](https://twitter.com/Ichorus)
+-  and every open source library i used.
 
