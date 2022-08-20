@@ -4,7 +4,7 @@
   "description": " A basic starter for an express.js API",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "NODE_TLS_REJECT_UNAUTHORIZED=0 node src/index.js",
     "dev": "nodemon src/index.js",
     "lint": "eslint --fix src",
     "test": "mocha --exit"

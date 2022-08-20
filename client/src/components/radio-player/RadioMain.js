@@ -23,7 +23,7 @@ const RadioMain = () => {
 
 	const { stations, status, setStationSearch } =
 		useFetchStation(selectedCountry);
-
+	console.log(stations);
 	const nextSong = () => {
 		if (currentPlayingIndex + 1 < stations.length) {
 			setCurrentPlayingIndex(currentPlayingIndex + 1);
