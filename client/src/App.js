@@ -34,7 +34,7 @@ function App() {
 			</MainLayout>
 
 			<span className="ebube">
-				Coded by <a href="">Ebube</a>
+				Coded by <a href="https://github.com/Bube-create/tesla-dashboard">Ebube</a>
 			</span>
 		</StyledDiv>
 	);
