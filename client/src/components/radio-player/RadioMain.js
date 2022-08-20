@@ -14,16 +14,16 @@ const RadioMain = () => {
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [inputSearch, setSearchInput] = useState("");
 	const [expand, setExpand] = useState(false);
-	//get users initial country
+
 	useEffect(() => {
-		fetch("https://ipinfo.io/json?token=cf20bdf7855550")
+		fetch(`https://ipinfo.io/json?token=${process.env.REACT_APP_IP_KEY}`)
 			.then((response) => response.json())
 			.then((jsonResponse) => setSelectedCountry(jsonResponse.country));
 	}, []);
 
 	const { stations, status, setStationSearch } =
 		useFetchStation(selectedCountry);
-	console.log(stations);
+
 	const nextSong = () => {
 		if (currentPlayingIndex + 1 < stations.length) {
 			setCurrentPlayingIndex(currentPlayingIndex + 1);
