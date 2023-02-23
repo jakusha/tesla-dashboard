@@ -14,7 +14,7 @@ function useFetchStation(country) {
 		async function getStations() {
 			// query stations by country code and limit to first 200 stations
 			const stations = await fetch(
-				`https://tesla-dashboard-simulator.herokuapp.com/api/v1/radio-service/${country}/${stationSearch}`
+				`https://tesla-dashboard-radio.onrender.com/api/v1/radio-service/${country}/${stationSearch}`
 			)
 				.then((res) => res.json())
 				.then((data) => {
