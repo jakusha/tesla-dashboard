@@ -22,18 +22,27 @@ let DefaultIcon = L.icon({
 
 L.Marker.prototype.options.icon = DefaultIcon;
 
-function converTimeToAMPm(timeString) {
-	const timeString12hr = new Date(
-		"1970-01-01T" + timeString + "Z"
-	).toLocaleTimeString("en-US", {
-		timeZone: "UTC",
-		hour12: true,
-		hour: "numeric",
-		minute: "numeric",
-	});
-
-	return timeString12hr;
-}
+function getCurrentTime() {
+	const now = new Date();
+	const hours = now.getHours();
+	const minutes = now.getMinutes();
+	
+	// Determine if it's AM or PM
+	const amOrPm = hours >= 12 ? 'PM' : 'AM';
+	
+	// Convert to 12-hour format
+	const formattedHours = hours % 12 === 0 ? 12 : hours % 12;
+	
+	// Add leading zero for single-digit minutes
+	const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+	
+	const currentTime = `${formattedHours}:${formattedMinutes} ${amOrPm}`;
+	return currentTime;
+  }
+  
+  const currentTime = getCurrentTime();
+  
+  
 
 const MapSection = ({ setTabIndex }) => {
 	const [initialPosition, setInitialPosition] = useState([]);
@@ -148,7 +157,7 @@ const MapSection = ({ setTabIndex }) => {
 				<div className="notification-bar-right">
 					<span>17 &#8451;</span>
 					<span>
-						{converTimeToAMPm(new Date().toLocaleTimeString())}
+						{currentTime}
 					</span>
 				</div>
 			</div>

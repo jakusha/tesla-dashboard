@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
-import { countryList } from "../../utils/countrylist";
-import RadioPlayer from "./RadioPlayer";
-import useFetchStation from "./useFetchStation";
-import RadioChannelList from "./RadioChannelList";
-import { v4 as uuidv4 } from "uuid";
-import styled from "styled-components";
-import ReactSelect from "react-select";
+import { useEffect, useState } from 'react';
+import { countryList } from '../../utils/countrylist';
+import RadioPlayer from './RadioPlayer';
+import useFetchStation from './useFetchStation';
+import RadioChannelList from './RadioChannelList';
+import { v4 as uuidv4 } from 'uuid';
+import styled from 'styled-components';
+import ReactSelect from 'react-select';
 
 const RadioMain = () => {
-	const [selectedCountry, setSelectedCountry] = useState("");
+	const [selectedCountry, setSelectedCountry] = useState('');
 	const [currentPlaying, setCurrentPlaying] = useState({});
 	const [currentPlayingIndex, setCurrentPlayingIndex] = useState(0);
 	const [isPlaying, setIsPlaying] = useState(false);
-	const [inputSearch, setSearchInput] = useState("");
+	const [inputSearch, setSearchInput] = useState('');
 	const [expand, setExpand] = useState(false);
 
 	useEffect(() => {
@@ -22,8 +22,7 @@ const RadioMain = () => {
 	}, []);
 
 	const { stations, status, setStationSearch } =
-	useFetchStation(selectedCountry);
-	console.log(stations, status);
+		useFetchStation(selectedCountry);
 
 	const nextSong = () => {
 		if (currentPlayingIndex + 1 < stations.length) {
@@ -75,19 +74,19 @@ const RadioMain = () => {
 
 			<div
 				// style={{ height: expand ? "10vh" : "65vh" }}
-				className="radio-info-stations"
+				className='radio-info-stations'
 			>
-				<div className="radio-search">
-					<div className="radio-search-station">
-						<img src="./images/searchicon.png" alt="" />
+				<div className='radio-search'>
+					<div className='radio-search-station'>
+						<img src='./images/searchicon.png' alt='' />
 						<input
 							value={inputSearch}
 							onChange={searchHandler}
-							placeholder={"search stations..."}
+							placeholder={'search stations...'}
 						/>
 					</div>
-					<div className="radio-search-countries">
-						<label htmlFor="countries">Countries: </label>
+					<div className='radio-search-countries'>
+						<label htmlFor='countries'>Countries: </label>
 						{/* <select
 							id="countries"
 							onChange={(e) => setSelectedCountry(e.target.value)}
@@ -107,7 +106,7 @@ const RadioMain = () => {
 						</select> */}
 						<CountrySelect
 							onChange={(e) => setSelectedCountry(e.value)}
-							id="countries"
+							id='countries'
 							defaultValue={{
 								value: selectedCountry,
 								label: selectedCountry,
@@ -116,28 +115,29 @@ const RadioMain = () => {
 								value: country.iso_3166_1,
 								label: country.name,
 							}))}
-							className="react-select-container"
-							classNamePrefix="react-select"
+							className='react-select-container'
+							classNamePrefix='react-select'
 						/>
 					</div>
 				</div>
-				{status === "loading" ? (
-					<div className="loading">loading .....</div>
+				{status === 'loading' ? (
+					<div className='loading'>loading .....</div>
 				) : (
-					""
+					''
 				)}
 				{stations && stations.length < 1 ? (
-					<div className="notfound"> station not found </div>
+					<div className='notfound'> station not found </div>
 				) : null}
 
-				<div>radio is currently down :(</div>
-				{/* <div className="radio-stations">
-					{status === "completed" && (
+				<div className='radio-stations'>
+					{status === 'completed' && (
 						<>
-							<div className="stations-length">
+							<div className='stations-length'>
 								Stations: {stations.length}
 							</div>
-							{stations  && stations.map((station, idx) => {
+
+							<div>radio is currently down ;(</div>
+							{/* {stations.map((station, idx) => {
 								return (
 									<RadioChannelList
 										setCurrentPlaying={setCurrentPlaying}
@@ -149,10 +149,10 @@ const RadioMain = () => {
 										}
 									/>
 								);
-							})}
+							})} */}
 						</>
 					)}
-				</div> */}
+				</div>
 			</div>
 		</StyledDiv>
 	);
@@ -185,8 +185,8 @@ const StyledDiv = styled.div`
 	}
 	.radio-info-stations {
 		// height: 60vh;
-		max-height: ${(props) => (props.expand ? "402px" : "0vh")};
-		min-height: ${(props) => (props.expand ? "402px" : "0vh")};
+		max-height: ${(props) => (props.expand ? '402px' : '0vh')};
+		min-height: ${(props) => (props.expand ? '402px' : '0vh')};
 		overflow-y: scroll;
 		transition: all 0.6s ease;
 	}
