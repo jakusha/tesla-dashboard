@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function useFetchStation(country) {
-	const [stations, setStations] = useState();
+	const [stations, setStations] = useState(null);
 	const [status, setStatus] = useState("idle");
 	const [stationSearch, setStationSearch] = useState("");
 
@@ -13,7 +13,7 @@ function useFetchStation(country) {
 
 		async function getStations() {
 			// query stations by country code and limit to first 200 stations
-			const stations = await fetch(
+			await fetch(
 				`https://tesla-dashboard-radio.onrender.com/api/v1/radio-service/${country}/${stationSearch}`
 			)
 				.then((res) => res.json())

@@ -22,7 +22,8 @@ const RadioMain = () => {
 	}, []);
 
 	const { stations, status, setStationSearch } =
-		useFetchStation(selectedCountry);
+	useFetchStation(selectedCountry);
+	console.log(stations, status);
 
 	const nextSong = () => {
 		if (currentPlayingIndex + 1 < stations.length) {
@@ -129,13 +130,14 @@ const RadioMain = () => {
 					<div className="notfound"> station not found </div>
 				) : null}
 
-				<div className="radio-stations">
+				<div>radio is currently down :(</div>
+				{/* <div className="radio-stations">
 					{status === "completed" && (
 						<>
 							<div className="stations-length">
 								Stations: {stations.length}
 							</div>
-							{stations.map((station, idx) => {
+							{stations  && stations.map((station, idx) => {
 								return (
 									<RadioChannelList
 										setCurrentPlaying={setCurrentPlaying}
@@ -150,7 +152,7 @@ const RadioMain = () => {
 							})}
 						</>
 					)}
-				</div>
+				</div> */}
 			</div>
 		</StyledDiv>
 	);
