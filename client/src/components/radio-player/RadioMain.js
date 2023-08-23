@@ -73,7 +73,6 @@ const RadioMain = () => {
 			/>
 
 			<div
-				// style={{ height: expand ? "10vh" : "65vh" }}
 				className='radio-info-stations'
 			>
 				<div className='radio-search'>
@@ -87,23 +86,6 @@ const RadioMain = () => {
 					</div>
 					<div className='radio-search-countries'>
 						<label htmlFor='countries'>Countries: </label>
-						{/* <select
-							id="countries"
-							onChange={(e) => setSelectedCountry(e.target.value)}
-							value={selectedCountry}
-						>
-							{countryList.map((country) => (
-								<option
-									value={country.iso_3166_1}
-									defaultValue={
-										selectedCountry === country.iso_3166_1
-									}
-									key={uuidv4()}
-								>
-									{country.name}
-								</option>
-							))}
-						</select> */}
 						<CountrySelect
 							onChange={(e) => setSelectedCountry(e.value)}
 							id='countries'
@@ -125,8 +107,8 @@ const RadioMain = () => {
 				) : (
 					''
 				)}
-				{stations && stations.length < 1 ? (
-					<div className='notfound'> station not found </div>
+				{stations && status !== 'loading' &&stations.length < 1 ? (
+					<div className='notfound'> Select a country to show stations </div>
 				) : null}
 
 				<div className='radio-stations'>
@@ -136,20 +118,19 @@ const RadioMain = () => {
 								Stations: {stations.length}
 							</div>
 
-							<div>radio is currently down ;(</div>
-							{/* {stations.map((station, idx) => {
+							{stations.map((station, idx) => {
 								return (
 									<RadioChannelList
 										setCurrentPlaying={setCurrentPlaying}
 										channel={station}
 										currentIndex={idx}
-										key={uuidv4()}
+										key={uuidv4()} 
 										setCurrentPlayingIndex={
 											setCurrentPlayingIndex
 										}
 									/>
 								);
-							})} */}
+							})}
 						</>
 					)}
 				</div>
